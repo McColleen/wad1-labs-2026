@@ -15,6 +15,16 @@
 
       <h3 class="ui header">
         {{title}}
+        <div class="sub header">
+          Total songs: {{songs.length}}
+        </div>
+        <a href="/playlist/{{id}}">
+	<i class="ui open folder outline black icon"></i>
+</a>
+<a href="/dashboard/deleteplaylist/{{id}}">
+   <i class="ui trash black icon"></i>
+</a>
+
       </h3>
       <a href="/playlist/{{id}}"> View </a>
     </section>
