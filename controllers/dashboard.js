@@ -16,12 +16,27 @@ const dashboard = {
     
     response.render('dashboard', viewData);
   },
+  addPlaylist(request, response) {
+    const newPlaylist = {
+      id: Date.now().toString(),
+      title: request.body.title,
+      songs: []
+    };
+
+    if (newPlaylist.title && newPlaylist.title.trim().length > 0) {
+      newPlaylist.title = newPlaylist.title.trim();
+      logger.debug(`Creating a new Playlist ${newPlaylist.title}`);
+      playlistStore.addPlaylist(newPlaylist);
+    }
+
+    response.redirect('/dashboard');
+  },
   deletePlaylist(request, response) {
     const playlistId = request.params.id;
     logger.debug(`Deleting Playlist ${playlistId}`);
     playlistStore.removePlaylist(playlistId);
     response.redirect("/dashboard");
-},
+  },
 
 };
 

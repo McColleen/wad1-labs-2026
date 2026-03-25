@@ -10,20 +10,26 @@ const playlistStore = {
   array: 'songs',
   getAllPlaylists() {
     return this.store.findAll(this.collection);
-    },
-getPlaylist(id) {
+  },
+  getPlaylist(id) {
     return this.store.findOneBy(this.collection, (playlist => playlist.id === id));
-},
-removeSong(id, songId) {
+  },
+  addPlaylist(playlist) {
+    this.store.addCollection(this.collection, playlist);
+  },
+  addSong(id, song) {
+    this.store.addItem(this.collection, id, this.array, song);
+  },
+  removeSong(id, songId) {
     this.store.removeItem(this.collection, id, this.array, songId);
-},
-removePlaylist(id) {
+  },
+  removePlaylist(id) {
     const playlist = this.getPlaylist(id);
     this.store.removeCollection(this.collection, playlist);
-},
-editSong(id, songId, updatedSong) {
+  },
+  editSong(id, songId, updatedSong) {
     this.store.editItem(this.collection, id, songId, this.array, updatedSong);
-},
+  },
 
 };
 

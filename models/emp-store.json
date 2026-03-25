@@ -3,7 +3,7 @@
        {
         "name":"Stevie",
         "fullname":"Stevie Feliciano",
-        "image":"public/stevie.jpg",
+        "image":"/stevie.jpg",
         "joined":2016,
         "job":"Web Developer",
         "city":"Boston",
@@ -12,7 +12,7 @@
        {
         "name":"Helen",
         "fullname":"Helen Hess",
-        "image":"public/helen.jpg",
+        "image":"/helen.jpg",
         "joined":2013,
         "job":"Art Director",
         "city":"New York",
@@ -21,7 +21,7 @@
        {
         "name":"Jenny",
         "fullname":"Jenny Howe",
-        "image":"public/jenny.jpg",
+        "image":"/jenny.jpg",
         "joined":2014,
         "job":"UX Designer",
         "city":"Manhatten",

@@ -16,6 +16,26 @@ const playlist = {
     };
     response.render('playlist', viewData);
   },
+  addSong(request, response) {
+    const playlistId = request.params.id;
+    const newSong = {
+      id: Date.now().toString(),
+      title: request.body.title,
+      artist: request.body.artist
+    };
+
+    if (
+      newSong.title && newSong.title.trim().length > 0 &&
+      newSong.artist && newSong.artist.trim().length > 0
+    ) {
+      newSong.title = newSong.title.trim();
+      newSong.artist = newSong.artist.trim();
+      logger.debug(`Adding Song ${newSong.title} to Playlist ${playlistId}`);
+      playlistStore.addSong(playlistId, newSong);
+    }
+
+    response.redirect('/playlist/' + playlistId);
+  },
   deleteSong(request, response) {
     const playlistId = request.params.id;
     const songId = request.params.songid;
@@ -34,7 +54,7 @@ updateSong(request, response) {
     };
     playlistStore.editSong(playlistId, songId, updatedSong);
     response.redirect('/playlist/' + playlistId);
-}
+  }
 };
 
 export default playlist;

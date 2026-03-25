@@ -1,20 +1,9 @@
 {
   "playlistCollection": [
     {
-      "id": "02",
-      "title": "Beethoven Concertos",
-      "songs": [
-        {
-          "id": "08",
-          "title": "Piano Concerto No. 4",
-          "artist": "Beethoven"
-        },
-        {
-          "id": "09",
-          "title": "Piano Concerto No. 6",
-          "artist": "Beethoven"
-        }
-      ]
+      "id": "1774443348343",
+      "title": "Trial Test",
+      "songs": []
     }
   ]
 }

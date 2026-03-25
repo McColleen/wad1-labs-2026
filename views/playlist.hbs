@@ -4,6 +4,21 @@
   <h2 class="ui header">
     {{singlePlaylist.title}}
   </h2>
+
+  <form class="ui stacked segment form" method="POST" action="/playlist/{{singlePlaylist.id}}/addsong">
+    <div class="two fields">
+      <div class="field">
+        <label>Song Title</label>
+        <input type="text" name="title" placeholder="Enter song title" required>
+      </div>
+      <div class="field">
+        <label>Artist</label>
+        <input type="text" name="artist" placeholder="Enter artist" required>
+      </div>
+    </div>
+    <button class="ui blue submit button" type="submit">Add Song</button>
+  </form>
+
   {{> listsongs singlePlaylist}}
 </section>
 

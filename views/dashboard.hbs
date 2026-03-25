@@ -3,6 +3,14 @@
 <section class="ui left aligned middle aligned segment">
   
   <h2>Playlist App Dashboard</h2>
+
+  <form class="ui stacked segment form" action="/dashboard/addplaylist" method="POST">
+    <div class="field">
+      <label>Playlist Title</label>
+      <input placeholder="Enter playlist title" type="text" name="title" required>
+    </div>
+    <button class="ui blue submit button">Add Playlist</button>
+  </form>
   
   {{#unless playlists}}
     <h3 class="ui message">
