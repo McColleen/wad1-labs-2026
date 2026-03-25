@@ -1,4 +1,4 @@
-<tr id="song">
+<tr id="song{{@index}}">
   <td>
     {{title}}
   </td>
@@ -7,7 +7,7 @@
   </td>
 
   <td class="center aligned">
-    <button title="Edit song" class = "editSubmit">
+    <button title="Edit song" class = "editSubmit" id="showEdit{{@index}}">
       <i class="ui pencil icon"></i>
     </button>
   </td>

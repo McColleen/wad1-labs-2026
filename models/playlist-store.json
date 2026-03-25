@@ -3,7 +3,13 @@
     {
       "id": "1774443348343",
       "title": "Trial Test",
-      "songs": []
+      "songs": [
+        {
+          "id": "1774443857557",
+          "title": "Test",
+          "artist": "testing edits"
+        }
+      ]
     }
   ]
 }
