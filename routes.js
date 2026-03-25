@@ -13,6 +13,7 @@ import stats from './controllers/stats.js';
 router.get('/', start.createView);
 router.get('/dashboard', dashboard.createView);
 router.get('/searchCategory', dashboard.createView);
+router.get('/sortData', dashboard.createView);
 router.get('/about', about.createView);
 router.get('/stats', stats.createView);
 router.get('/playlist/:id', playlist.createView);

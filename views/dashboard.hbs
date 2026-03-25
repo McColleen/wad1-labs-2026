@@ -1,18 +1,6 @@
 {{> menu id="dashboard"}}
 
 <section class="ui left aligned middle aligned segment">
-  
-  <section class="dashboard-header">
-
-    <h2 class="title">Dashboard</h2>
-
-    <form action="/searchCategory" method="GET" class="ui form dashboard-search-form">
-      <div class="field dashboard-search-field">
-        <input type="text" name="searchTerm" placeholder="Search by title..." value="{{search}}">
-      </div>
-    </form>
-
-  </section>
 
   <form class="ui stacked segment form" action="/dashboard/addplaylist" method="POST">
     <div class="two fields">
@@ -28,60 +16,7 @@
     <button class="ui blue submit button">Add Playlist</button>
   </form>
   
-  {{#unless search}}
-    {{#unless playlists}}
-      <h3 class="ui message">
-        Start adding your playlists!
-      </h3>
-    {{/unless}}
-  {{/unless}}
-
-  {{#each playlists}}
-    <section class="ui left aligned middle aligned segment">
-
-      <h3 class="ui header">
-        {{uppercase title}}
-        <div class="sub header">
-          <p>
-            <i class="music icon"></i>
-            {{#if songs}}
-              Total songs:
-              {{songs.length}}
-            {{else}}
-              Empty playlist!
-            {{/if}}
-
-            {{#if date}}
-              <br>
-              <i class="calendar alternate outline icon"></i>
-              Created on <i>{{formatDate date}}</i>
-            {{/if}}
-
-            {{#if rating}}
-              <br>
-              <span
-                class="ui yellow disabled rating"
-                data-icon="star"
-                data-rating="{{rating}}"
-                data-max-rating="5">
-              </span>
-              <span style="color: grey; font-size: 90%; font-style: italic">
-                {{highlightPopular rating}}
-              </span>
-            {{/if}}
-          </p>
-        </div>
-        <a href="/playlist/{{id}}">
-	<i class="ui open folder outline black icon"></i>
-</a>
-<a href="/dashboard/deleteplaylist/{{id}}">
-   <i class="ui trash black icon"></i>
-</a>
-
-      </h3>
-      <a href="/playlist/{{id}}"> View </a>
-    </section>
-  {{/each}}
+  {{> listplaylists}}
 
 </section>
 
