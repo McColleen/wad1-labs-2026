@@ -6,20 +6,33 @@ import playlistStore from "../models/playlist-store.js";
 const dashboard = {
   createView(request, response) {
     logger.info("Dashboard page loading!");
-    
+
+    const searchTerm = request.query.searchTerm || "";
+
+    const playlists = searchTerm
+      ? playlistStore.searchPlaylist(searchTerm)
+      : playlistStore.getAllPlaylists();
+
     const viewData = {
       title: "Playlist App Dashboard",
-      playlists: playlistStore.getAllPlaylists()
+      playlists: playlists,
+      search: searchTerm
     };
-    
+
     logger.debug(viewData.playlists);
-    
-    response.render('dashboard', viewData);
+
+    response.render("dashboard", viewData);
   },
   addPlaylist(request, response) {
+    const timestamp = new Date();
+    const parsedRating = parseInt(request.body.rating, 10);
+    const safeRating = Number.isNaN(parsedRating) ? 1 : Math.min(5, Math.max(1, parsedRating));
+
     const newPlaylist = {
       id: Date.now().toString(),
       title: request.body.title,
+      date: timestamp,
+      rating: safeRating,
       songs: []
     };
 

@@ -2,13 +2,13 @@
 
 <section class="ui center aligned middle aligned scrolling segment">
   <h2 class="ui header">
-    {{singlePlaylist.title}}
+    {{uppercase singlePlaylist.title}}
   </h2>
 
   <form class="ui stacked segment form" method="POST" action="/playlist/{{singlePlaylist.id}}/addsong">
     <div class="two fields">
       <div class="field">
-        <label>Song Title</label>
+        <label>Title</label>
         <input type="text" name="title" placeholder="Enter song title" required>
       </div>
       <div class="field">

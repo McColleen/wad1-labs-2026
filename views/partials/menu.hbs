@@ -3,9 +3,13 @@
   <div class="right menu">
     <a id="dashboard" class="item" href="/dashboard"> Dashboard  </a>
     <a id="about" class="item" href="/about"> About  </a>
+    <a id="statistics" class="item" href="/stats"> Statistics  </a>
   </div>
 </nav>
 
 <script>
- document.querySelector("#{{id}}").classList.add("active");
+ const selectedMenuItem = document.querySelector("#{{id}}");
+ if (selectedMenuItem) {
+   selectedMenuItem.classList.add("active");
+ }
 </script>

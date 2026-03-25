@@ -3,13 +3,44 @@
     {
       "id": "1774443348343",
       "title": "Trial Test",
+      "rating": 4,
       "songs": [
         {
           "id": "1774443857557",
           "title": "Test",
           "artist": "testing edits"
+        },
+        {
+          "id": "1774449900003",
+          "title": "ENtry",
+          "artist": "Field"
         }
       ]
+    },
+    {
+      "id": "1774447192721",
+      "title": "Benson",
+      "rating": 2,
+      "songs": []
+    },
+    {
+      "id": "1774447196932",
+      "title": "Siobhan",
+      "rating": 5,
+      "songs": []
+    },
+    {
+      "id": "1774447200812",
+      "title": "Brennan",
+      "rating": 3,
+      "songs": []
+    },
+    {
+      "id": "1774449909716",
+      "title": "Bahaha",
+      "date": "2026-03-25T14:45:09.716Z",
+      "rating": 1,
+      "songs": []
     }
   ]
 }

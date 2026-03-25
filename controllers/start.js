@@ -11,8 +11,7 @@ const start = {
       title: "Welcome to the Playlist app!",
       info: appStore.getAppInfo()
     };
-    
-    //logger.debug(viewData);
+
     response.render('start', viewData);   
   },
 };
