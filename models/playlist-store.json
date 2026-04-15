@@ -1,24 +1,6 @@
 {
   "playlistCollection": [
     {
-      "id": "1774453034984",
-      "title": "Demon Days",
-      "date": "2026-03-25T15:37:14.984Z",
-      "rating": 4,
-      "songs": [
-        {
-          "id": "1774453159916",
-          "title": "Feel Good inc",
-          "artist": "Gorillaz"
-        },
-        {
-          "id": "1774453166758",
-          "title": "Demon Days",
-          "artist": "Gorillaz"
-        }
-      ]
-    },
-    {
       "id": "1774454896797",
       "title": "A",
       "date": "2026-03-25T16:08:16.797Z",

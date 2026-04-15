@@ -1,0 +1,33 @@
+'use strict';
+
+import JsonStore from './json-store.js';
+
+const userStore = {
+
+  store: new JsonStore('./models/user-store.json', { userCollection: [] }),
+  collection: 'userCollection',
+
+  getAllUsers() {
+    return this.store.findAll(this.collection);
+  },
+
+  getUser(id) {
+    return this.store.findOneBy(this.collection, (user => user.id === id));
+  },
+
+  getUserByEmail(email) {
+    return this.store.findOneBy(this.collection, (user => user.email === email));
+  },
+
+  addUser(user) {
+    this.store.addCollection(this.collection, user);
+  },
+
+  removeUser(id) {
+    const user = this.getUser(id);
+    this.store.removeCollection(this.collection, user);
+  },
+
+};
+
+export default userStore;

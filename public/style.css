@@ -48,3 +48,11 @@ table {
 .dashboard-search-form input[type="text"] {
   height: 54px;
 }
+
+.name{
+  padding-top:22.5px;
+  padding-right:5px;
+  line-height:20px;
+  font-weight:bold;
+  text-transform:capitalize;
+}

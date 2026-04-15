@@ -4,13 +4,20 @@ import express from 'express';
 const router = express.Router();
 import logger from "./utils/logger.js";
 
+import accounts from './controllers/accounts.js';
 import start from './controllers/start.js';
 import dashboard from './controllers/dashboard.js';
 import about from './controllers/about.js';
 import playlist from './controllers/playlist.js';
 import stats from './controllers/stats.js';
 
-router.get('/', start.createView);
+router.get('/', accounts.index);
+router.get('/start', start.createView);
+router.get('/login', accounts.login);
+router.get('/signup', accounts.signup);
+router.post('/register', accounts.register);
+router.post('/authenticate', accounts.authenticate);
+router.get('/logout', accounts.logout);
 router.get('/dashboard', dashboard.createView);
 router.get('/searchCategory', dashboard.createView);
 router.get('/sortData', dashboard.createView);
