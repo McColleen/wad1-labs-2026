@@ -1,18 +1,69 @@
 {
   "playlistCollection": [
     {
-      "id": "1774454896797",
-      "title": "A",
-      "date": "2026-03-25T16:08:16.797Z",
-      "rating": 3,
-      "songs": []
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "id": "2650b696-e309-4c81-abf9-dae04ccec841",
+      "title": "Moe's Tavern",
+      "rating": 4,
+      "songs": [
+        {
+          "id": "1776869967043",
+          "title": "The Flaming Moe",
+          "artist": "Moe"
+        },
+        {
+          "id": "1776869980913",
+          "title": "Spiderpig",
+          "artist": "Homer J. Simpson"
+        }
+      ],
+      "date": "2026-04-22T14:59:14.649Z"
     },
     {
-      "id": "1774454904740",
-      "title": "B",
-      "date": "2026-03-25T16:08:24.740Z",
+      "userid": "a0ec710e-4ef6-4a1e-9963-6e4bd40875a4",
+      "id": "fd710831-fe48-4793-a90a-194160a7c955",
+      "title": "Say The Line Bart",
       "rating": 2,
-      "songs": []
+      "songs": [
+        {
+          "id": "1776870029400",
+          "title": "Do The Bartman",
+          "artist": "Bart Simpson"
+        },
+        {
+          "id": "1776870046410",
+          "title": "Happy Birthday Lisa",
+          "artist": "\" Not Micheal Jackson \""
+        }
+      ],
+      "date": "2026-04-22T15:00:16.015Z"
+    },
+    {
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "id": "3026d835-e3b7-41c8-8983-898d0f58463c",
+      "title": "I'll Krump With You Sweetie Pie",
+      "rating": 1,
+      "songs": [
+        {
+          "id": "1776870122633",
+          "title": "One Way Monorail",
+          "artist": "Marge Simpson"
+        },
+        {
+          "id": "1776870134266",
+          "title": "Why Do Birds Suddenly Appear?",
+          "artist": "The Carpenters"
+        }
+      ],
+      "date": "2026-04-22T15:01:50.249Z"
+    },
+    {
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "id": "f043ac29-8ca7-45ee-9b5c-faf3555fe071",
+      "title": "One Way Monorail",
+      "rating": 2,
+      "songs": [],
+      "date": "2026-04-22T15:10:05.368Z"
     }
   ]
 }

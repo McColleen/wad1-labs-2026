@@ -2,6 +2,7 @@
 
 import logger from '../utils/logger.js';
 import playlistStore from '../models/playlist-store.js';
+import userStore from '../models/user-store.js';
 import accounts from './accounts.js';
 
 const stats = {
@@ -13,8 +14,10 @@ const stats = {
 
       // app statistics calculations
       const playlists = playlistStore.getAllPlaylists();
+      const users = userStore.getAllUsers();
 
       let numPlaylists = playlists.length;
+      let numUsers = users.length;
 
       let numSongs = playlists.reduce((total, playlist) => total + playlist.songs.length, 0);
 
@@ -34,21 +37,23 @@ const stats = {
       
       const statistics = {
         displayNumPlaylists: numPlaylists,
+        displayNumUsers: numUsers,
         displayNumSongs: numSongs,
         displayAverage: average,
         displayAvgRating: avgRating,
         highest: maxRating,
         displayFav: favTitles,
         longest: longestSize,
-        longestTitles: longestPlaylistTitles,
+        longestTitles: longestPlaylistTitles
       };
 
       const viewData = {
         title: "Playlist App Statistics",
-        statistics: statistics,
+        stats: statistics,
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName
       };
 
+      logger.info(viewData.fullname);
       response.render("stats", viewData);
     }
     else response.redirect('/');
