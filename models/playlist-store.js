@@ -14,8 +14,15 @@ const playlistStore = {
   getPlaylist(id) {
     return this.store.findOneBy(this.collection, (playlist => playlist.id === id));
   },
-  addPlaylist(playlist) {
-    this.store.addCollection(this.collection, playlist);
+  async addPlaylist(playlist, file, response) {
+    try {
+      playlist.picture = await this.store.addToCloudinary(file);
+      this.store.addCollection(this.collection, playlist);
+      response();
+    } catch (error) {
+      logger.error("Error processing playlist:", error);
+      response(error);
+    }
   },
   addSong(id, song) {
     this.store.addItem(this.collection, id, this.array, song);
@@ -23,9 +30,20 @@ const playlistStore = {
   removeSong(id, songId) {
     this.store.removeItem(this.collection, id, this.array, songId);
   },
-  removePlaylist(id) {
+  async removePlaylist(id, response) {
     const playlist = this.getPlaylist(id);
+
+    if (playlist.picture && playlist.picture.public_id) {
+      try {
+        await this.store.deleteFromCloudinary(playlist.picture.public_id);
+        logger.info("Cloudinary image deleted");
+      } catch (err) {
+        logger.error("Failed to delete Cloudinary image:", err);
+      }
+    }
+
     this.store.removeCollection(this.collection, playlist);
+    response();
   },
   editSong(id, songId, updatedSong) {
     this.store.editItem(this.collection, id, songId, this.array, updatedSong);
