@@ -1,6 +1,7 @@
 'use strict';
 
 import JsonStore from './json-store.js';
+import logger from '../utils/logger.js';
 
 const userStore = {
 
@@ -19,8 +20,15 @@ const userStore = {
     return this.store.findOneBy(this.collection, (user => user.email === email));
   },
 
-  addUser(user) {
-    this.store.addCollection(this.collection, user);
+  async addUser(user, file, response) {
+    try {
+      user.picture = await this.store.addToCloudinary(file);
+      this.store.addCollection(this.collection, user);
+      response();
+    } catch (error) {
+      logger.error("Error processing user:", error);
+      response(error);
+    }
   },
 
   removeUser(id) {
